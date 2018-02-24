@@ -9,20 +9,16 @@
 
 <ion-content padding>
   <h1 class="">iwish<span style="color:#8BC34A">u.in/ecards</span></h1>
-
-  <ion-card class="card-md-0">
-  
-    <img src="https://4.bp.blogspot.com/-Yrj2qy4mCdY/Wo50F-lGZCI/AAAAAAAAH_w/Jb3ngaMLQasj7hkIVt2m_8ZHXROm78wkACLcBGAs/s1600/crazy-steve-job-quotes.jpg">
-  
+  <ion-card class="card-md-0" *ngFor="let item of eCards">
+    <img src={{item.imagePath}}>
     <ion-card-content>
-      <p>The People Who Are Crazy Enough To Think They Can Change The World Are The Ones Who Do.</p>
+      <p>{{item.title}}</p>
     </ion-card-content>
-  
     <ion-row>
       <ion-col>
         <button ion-button icon-left clear small>
           <ion-icon name="thumbs-up"></ion-icon>
-          <div>12 Likes</div>
+          <div>{{item.likes}} Likes</div>
         </button>
       </ion-col>
       <ion-col>
@@ -33,46 +29,9 @@
       </ion-col>
       <ion-col center text-center>
         <ion-note>
-          11h ago
+          {{item.updatedTime}} ago
         </ion-note>
       </ion-col>
     </ion-row>
-  
   </ion-card>
-
-  <ion-card class="card-md-0">
-  
-    <img src="https://iwishu.in/ecard/images/rowthiram-pazhagu.jpg">
-  
-    <ion-card-content>
-      <p>ரௌத்திரம் பழகு-Rowthiram Pazhagu Kavithai In Tamil - பாரதியார் கவிதைகள் [Bharathiyar Kavidhaigal] Quotes</p>
-    </ion-card-content>
-  
-    <ion-row>
-      <ion-col>
-        <button ion-button icon-left clear small>
-          <ion-icon name="thumbs-up"></ion-icon>
-          <div>12 Likes</div>
-        </button>
-      </ion-col>
-      <ion-col>
-        <button ion-button icon-left clear small>
-          <ion-icon name="text"></ion-icon>
-          <div>4 Comments</div>
-        </button>
-      </ion-col>
-      <ion-col center text-center>
-        <ion-note>
-          11h ago
-        </ion-note>
-      </ion-col>
-    </ion-row>
-  
-  </ion-card>
-
-  <!--<p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>-->
 </ion-content>
