@@ -10,30 +10,11 @@ page-home {
 		border-radius: 0px;
 		
 	}
-	.card-md:hover {
-		box-shadow: 0 40px 40px rgba(0,0,0,.16);
-		transform: translate(0,-20px);
-		transition-delay: 0s !important;
-	}
 	.card-md-0{
 		margin: 0px;
 		margin-top: 15px;
 		margin-bottom: 40px;
 	}	
 
-	ion-card.fitwidth.card.card-md {
-    margin: 0px;
-    padding: 0px;
-	}
-	.no-shadow{
-		box-shadow: 0px;
-	}
-	ion-app.md [padding] .scroll-content {
-		padding: 0px;
-	}
-	.card-md:hover {
-		box-shadow: 0 40px 40px rgba(0,0,0,.16);
-		transform: translate(0,-20px);
-		transition-delay: 0s !important;
-	}
+
 }

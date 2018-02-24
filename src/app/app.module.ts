@@ -6,6 +6,7 @@ import { HttpClientModule, HttpClient } from '@angular/common/http';
 
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
+import { CardDetailsPage } from '../pages/card-details/card-details';
 import { ListPage } from '../pages/list/list';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -16,6 +17,7 @@ import { YaziApiProvider } from '../providers/providers';
   declarations: [
     MyApp,
     HomePage,
+    CardDetailsPage,
     ListPage
   ],
   imports: [
@@ -27,6 +29,7 @@ import { YaziApiProvider } from '../providers/providers';
   entryComponents: [
     MyApp,
     HomePage,
+    CardDetailsPage,
     ListPage
   ],
   providers: [
