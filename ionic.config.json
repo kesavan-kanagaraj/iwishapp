@@ -1,0 +1,8 @@
+{
+  "name": "iwishapp",
+  "app_id": "9a901b43",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
