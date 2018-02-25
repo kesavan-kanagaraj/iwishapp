@@ -47,6 +47,7 @@ export class LoginPage {
     this.fb.login(['public_profile', 'user_friends', 'email'])
       .then(res => {
         if(res.status === "connected") {
+          debugger;
           this.isLoggedIn = true;
           this.getUserDetail(res.authResponse.userID);
         } else {
@@ -69,6 +70,7 @@ export class LoginPage {
   getUserDetail(userid) {
     this.fb.api("/"+userid+"/?fields=id,email,name,picture,gender",["public_profile"])
       .then(res => {
+        debugger;
         console.log(res);
         this.users = res;
       })
