@@ -15,7 +15,7 @@
       <p>{{item.title}}</p>
     </ion-card-content>
     <ion-row>
-      <ion-col>
+        <ion-col (click)="checkAuthentication()">
         <button ion-button icon-left clear small>
           <ion-icon name="thumbs-up"></ion-icon>
           <div>{{item.likes}} Likes</div>
