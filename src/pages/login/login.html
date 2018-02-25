@@ -7,11 +7,12 @@
     </ion-navbar>
   </ion-header>
   
-  <img style="width:50px" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg">
-  <p style="line-height: 23px;font-size:14px">Start Loving the wishes and spread the love,<br>log<span style="color:#8BC34A">u.in</span>With Facebook to get started</p>
+  
   
 
   <ion-content padding>
+      <p style="text-align:center"><img style="width:50px" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg"></p>
+      <p style="line-height: 23px;font-size:14px">Start Loving the wishes and spread the love,<br>log<span style="color:#8BC34A">u.in</span>With Facebook to get started</p>
     <div *ngIf="isLoggedIn; else facebookLogin">
       <h2>Hi, {{users.name}} ({{users.email}})</h2>
       <p>
@@ -27,8 +28,6 @@
         </button>
       </p>
     </div>
-    <img style="width:50px" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg">
-    <p>Start Loving the wishes and spread the love,<br>log<span style="color:#8BC34A">u.in</span> With Facebook to get started</p>
     <ng-template #facebookLogin>
       <button ion-button block icon-left (click)="login()">
         <ion-icon name="logo-facebook"></ion-icon>
