@@ -1,14 +1,19 @@
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
+      <ion-icon><img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/menu-button.svg"></ion-icon>
     </button>
-    <ion-title>Home</ion-title>
+    <ion-title>iwish<span style="color:#8BC34A">u.in</span></ion-title>
+    <ion-buttons end>
+        <button ion-button icon-only color="royal">
+            <ion-icon><img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/user.svg"></ion-icon>
+        </button>
+      </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h1 class="">iwish<span style="color:#8BC34A">u.in/ecards</span></h1>
+ <!-- <h1 class="">iwish<span style="color:#8BC34A">u.in/ecards</span></h1>-->
   <ion-card class="card-md-0" *ngFor="let item of eCards">
     <img src={{item.imagePath}}>
     <ion-card-content>

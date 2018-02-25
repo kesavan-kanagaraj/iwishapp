@@ -14,15 +14,19 @@
 // To declare rules for a specific mode, create a child rule
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
-ion-item.sidebar-customize.item.item-block.item-md img {
+ion-item.sidebar-customize img {
     display: inline-block;
     width: 22px;
     vertical-align: middle;
 }
-ion-item.sidebar-customize.item.item-block.item-md h1 {
+ion-item.sidebar-customize h1 {
     display: inline-block;
     font-size: 15px;
     vertical-align: middle;
     margin-left: 10px;
     margin-top: 4px;
+}
+.menuicon{
+    width:32px;
+    font-weight: 500;
 }
