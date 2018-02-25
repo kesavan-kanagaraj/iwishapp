@@ -18,23 +18,24 @@
     <img src={{item.imagePath}}>
     <ion-card-content>
       <p>{{item.title}}</p>
+      <p class="timestamp">WISHED AT : {{item.updatedTime}}</p>
     </ion-card-content>
     <ion-row>
         <ion-col (click)="checkAuthentication()">
         <button ion-button icon-left clear small>
-          <ion-icon name="thumbs-up"></ion-icon>
+          <ion-icon><img class="hearts" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg"></ion-icon>
           <div>{{item.likes}} Likes</div>
         </button>
       </ion-col>
-      <ion-col>
+    <!--  <ion-col>
         <button ion-button icon-left clear small>
           <ion-icon name="text"></ion-icon>
           <div>4 Comments</div>
-        </button>
-      </ion-col>
+        </button> 
+      </ion-col>-->
       <ion-col center text-center>
         <ion-note>
-          {{item.updatedTime}} ago
+         
         </ion-note>
       </ion-col>
     </ion-row>
