@@ -32,4 +32,25 @@ page-login {
     .sbg{
         text-align: center;
     }
+    .hearts{
+		width: 22px;
+	}
+	.heartstext{
+		color:#d8095f;
+	}
+	.share{
+		width: 18px;
+	}
+	.download{
+		width: 18px;
+    }
+    .img-radius{
+        border-radius: 5px;
+    }
+    ion-item.item.item-block {
+        background: none;
+    }
+    ion-list.list {
+        margin-bottom: 0px;
+    }
 }
