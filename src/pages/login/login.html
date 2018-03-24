@@ -3,35 +3,37 @@
         <button ion-button menuToggle>
             <ion-icon><img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/menu-button.svg"></ion-icon>
           </button>
-      <ion-title>log<span style="color:#8BC34A">u.in</span></ion-title>
+      <ion-title>iwish<span style="color:#8BC34A">u.in</span></ion-title>
     </ion-navbar>
   </ion-header>
   
   
   
 
-  <ion-content padding>
-      <p style="text-align:center"><img style="width:50px" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg"></p>
-      <p style="line-height: 23px;font-size:14px">Start Loving the wishes and spread the love,<br>log<span style="color:#8BC34A">u.in</span>With Facebook to get started</p>
-    <div *ngIf="isLoggedIn; else facebookLogin">
-      <h2>Hi, {{users.name}} ({{users.email}})</h2>
-      <p>
-        Gender: {{users.gender}}
-      </p>
-      <p>
-        <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
-      </p>
-      <p>
-        <button ion-button icon-left (click)="logout()">
+  <ion-content padding class="sbg">
+    <div class="midcen">
+        <p style="text-align:center" class="loginpageLogo">iwish<span style="color:#8BC34A">u.in</span></p>
+        <p style="text-align:center" class="tagline">WISHES & QUOTES</p>
+      <div *ngIf="isLoggedIn; else facebookLogin">
+        <h2>Hi, {{users.name}} ({{users.email}})</h2>
+        <p>
+          Gender: {{users.gender}}
+        </p>
+        <p>
+          <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
+        </p>
+        <p>
+          <button ion-button icon-left (click)="logout()" class="pad-15">
+            <ion-icon name="logo-facebook"></ion-icon>
+            Logout
+          </button>
+        </p>
+      </div>
+      <ng-template #facebookLogin>
+        <button ion-button icon-left (click)="login()" class="pad-15 fbtcolor">
           <ion-icon name="logo-facebook"></ion-icon>
-          Logout
+          Connect with Facebook
         </button>
-      </p>
+      </ng-template>
     </div>
-    <ng-template #facebookLogin>
-      <button ion-button block icon-left (click)="login()">
-        <ion-icon name="logo-facebook"></ion-icon>
-        Login with Facebook
-      </button>
-    </ng-template>
   </ion-content>

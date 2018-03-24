@@ -3,17 +3,19 @@ page-home {
 		font-size:18px;
 		font-weight:400;
 	}
-	.card-md{
+	.card-md,.card-ios,.card-wp{
 		width: auto;
-		box-shadow: 0 20px 20px rgba(0,0,0,.08);
+		box-shadow: none;
 		border: none;
 		border-radius: 0px;
+		border-bottom: 1px solid #f4f4f4;
 		
 	}
 	.card-md-0{
 		margin: 0px;
-		margin-top: 15px;
-		margin-bottom: 40px;
+		margin-top:0px;
+		margin-bottom:0px;
+		border-bottom: 1px solid #f4f4f4;
 	}	
 	.timestamp{
 		font-size: 12px;
@@ -22,6 +24,20 @@ page-home {
 	.hearts{
 		width: 32px;
 	}
-
+	.heartstext{
+		color:#d8095f;
+	}
+	.share{
+		width: 22px;
+	}
+	.download{
+		width: 22px;
+	}
+	.fright{
+		float: right;
+	}
+	p{
+		line-height: 22px;
+	}
 
 }

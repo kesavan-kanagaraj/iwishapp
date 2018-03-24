@@ -16,28 +16,27 @@
  <!-- <h1 class="">iwish<span style="color:#8BC34A">u.in/ecards</span></h1>-->
   <ion-card class="card-md-0" *ngFor="let item of eCards">
     <img src={{item.imagePath}}>
+    <ion-row>
+        <ion-col (click)="checkAuthentication()" class="col-2">
+        <button ion-button icon-left clear small>
+          <ion-icon><img class="hearts" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg"></ion-icon>
+          <div class="heartstext">{{item.likes}} Likes</div>
+        </button>
+      </ion-col>
+    <ion-col class="col-2 fright">
+        <button ion-button icon-right clear small>
+          <ion-icon><img class="share" src="https://iwishu.in/ecard/images/iwish-app-icons/share.svg"></ion-icon>
+        </button> 
+      </ion-col>
+      <ion-col class="col-2 fright">
+          <button ion-button icon-right clear small>
+              <ion-icon><img class="download" src="https://iwishu.in/ecard/images/iwish-app-icons/download.svg"></ion-icon>
+            </button>
+      </ion-col>
+    </ion-row>
     <ion-card-content>
       <p>{{item.title}}</p>
       <p class="timestamp">WISHED AT : {{item.updatedTime}}</p>
     </ion-card-content>
-    <ion-row>
-        <ion-col (click)="checkAuthentication()">
-        <button ion-button icon-left clear small>
-          <ion-icon><img class="hearts" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg"></ion-icon>
-          <div>{{item.likes}} Likes</div>
-        </button>
-      </ion-col>
-    <!--  <ion-col>
-        <button ion-button icon-left clear small>
-          <ion-icon name="text"></ion-icon>
-          <div>4 Comments</div>
-        </button> 
-      </ion-col>-->
-      <ion-col center text-center>
-        <ion-note>
-         
-        </ion-note>
-      </ion-col>
-    </ion-row>
   </ion-card>
 </ion-content>
