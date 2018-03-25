@@ -1,12 +1,14 @@
-export interface IEcards {  
+export interface IEcards { 
+   
     authorName: string;
     categoryName: string;
     createdTime: string;
     description: string;
     id: string;
     imagePath: string;
-    isPublic: string;
+    isPublic: boolean;
     likes: string;
+    isLiked: boolean;
     metaDescription: string;
     metaTitle: string;
     tags: string;

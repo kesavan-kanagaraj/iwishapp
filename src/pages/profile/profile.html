@@ -1,0 +1,72 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon>
+        <img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/menu-button.svg">
+      </ion-icon>
+    </button>
+    <ion-title>iwish<span style="color:#8BC34A">u.in</span></ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only color="royal" (click)="logout()">
+          <ion-icon><img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/user.svg"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="">
+
+  <div class="profile" *ngIf="userDetails">
+    <ion-list>
+      <ion-item>
+        <ion-avatar item-start>
+          <img src="{{userDetails.profileImgUrl}}">
+        </ion-avatar>
+        <h2>{{userDetails.name}}</h2>
+        <p>{{userDetails.email}}</p>
+      </ion-item>
+    </ion-list>
+    <ion-row>
+      <ion-col class="col-6">
+        <button ion-button block outline icon-left>
+          <ion-icon>
+            <img class="hearts" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg">
+          </ion-icon>
+          Likes
+        </button>
+      </ion-col>
+      <ion-col class="col-6">
+        <button ion-button block outline icon-left>
+          <ion-icon>
+            <img class="share" src="https://iwishu.in/ecard/images/iwish-app-icons/share.svg">
+          </ion-icon>
+          Share
+        </button>
+      </ion-col>
+    </ion-row>
+    <ion-row *ngFor="let item of eCards; let i = index">
+      <ion-col class="col-6" *ngIf="i%2==0">
+        <img class="img-radius" src="{{item.imagePath}}">
+      </ion-col>
+      <ion-col class="col-6" *ngIf="i%2!=0">
+        <img class="img-radius" src="{{item.imagePath}}">
+      </ion-col>
+    </ion-row>
+    <!-- <ion-row>
+      <ion-col class="col-6">
+        <img class="img-radius" src="https://iwishu.in/ecard/images/world-water-day.jpg">
+      </ion-col>
+      <ion-col class="col-6">
+        <img class="img-radius" src="https://iwishu.in/ecard/images/thank-farmer.jpg">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col class="col-6">
+        <img class="img-radius" src="https://iwishu.in/ecard/images/amaithi-shincan.jpg">
+      </ion-col>
+      <ion-col class="col-6">
+        <img class="img-radius" src="https://iwishu.in/ecard/images/wife.jpg">
+      </ion-col>
+    </ion-row> -->
+  </div>
+</ion-content>

@@ -3,41 +3,30 @@ page-home {
 		font-size:18px;
 		font-weight:400;
 	}
-	.card-md,.card-ios,.card-wp{
+	.card-md{
 		width: auto;
-		box-shadow: none;
-		border: none;
+		//box-shadow: 0 20px 20px rgba(0,0,0,.08);
+		//border: none;
 		border-radius: 0px;
-		border-bottom: 1px solid #f4f4f4;
 		
 	}
 	.card-md-0{
 		margin: 0px;
 		margin-top:0px;
-		margin-bottom:0px;
-		border-bottom: 1px solid #f4f4f4;
+		margin-bottom:15px;
 	}	
 	.timestamp{
 		font-size: 12px;
 		color:#949494;
 	}
-	.hearts{
-		width: 32px;
-	}
-	.heartstext{
-		color:#d8095f;
-	}
-	.share{
+	img.metaIcon {
 		width: 22px;
 	}
-	.download{
-		width: 22px;
+	.btntext{
+		color:#333;
+		font-size:12px;
+		text-transform:uppercase;
 	}
-	.fright{
-		float: right;
-	}
-	p{
-		line-height: 22px;
-	}
+
 
 }

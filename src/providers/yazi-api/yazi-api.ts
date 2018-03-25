@@ -1,6 +1,7 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient,HttpHeaders  } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
+import { UriHelpers } from '../../helpers/helpers';
 import 'rxjs/add/operator/map';
 
 /*
@@ -11,19 +12,76 @@ import 'rxjs/add/operator/map';
 */
 @Injectable()
 export class YaziApiProvider {
-  private baseUrl = 'http://www.vlsitechnology.com';
-  private eCardsUrl : string = '/api/ecards';
+
+
+
 
   constructor(public http: HttpClient) {
-    console.log('Hello YaziApiProvider Provider');
   }
 
-  getEcards(){
+
+  getEcards(categoryName: string, socialId: string) {
+    var requestUrl = categoryName == 'all' ? UriHelpers.eCardsUrl : UriHelpers.eCardsByCategoryUrl.replace('category-name', categoryName);  
+    requestUrl = socialId == "" ? requestUrl : requestUrl+"?socialId="+socialId;
     return new Promise(resolve => {
-      console.log(`${this.baseUrl + this.eCardsUrl}`);
-        this.http.get(`${this.baseUrl + this.eCardsUrl}`)
-            .subscribe(res => resolve(res));
+      this.http.get(`${UriHelpers.baseUrl + requestUrl}`)
+        .subscribe(res => {
+          resolve(res);
+        });
     });
+  }
+
+  getEcard(cardId:string,socialId: string) {
+    
+    var requestUrl = UriHelpers.eCardUrl.replace('id', cardId);  
+    requestUrl = socialId == "" ? requestUrl : requestUrl+"?socialId="+socialId;
+    return new Promise(resolve => {
+      this.http.get(`${UriHelpers.baseUrl + requestUrl}`)
+        .subscribe(res => {
+          resolve(res);
+        });
+    });
+  }
+
+  getFavorities(socialId: string) {
+    
+    var requestUrl = UriHelpers.favoritesPostUrl.replace('socialId', socialId);  
+    return new Promise(resolve => {
+      this.http.get(`${UriHelpers.baseUrl + requestUrl}`)
+        .subscribe(res => {
+          
+          resolve(res);
+        });
+    });
+  }
+
+  putService(url:string,data:any) {
+    
+    return new Promise(resolve => {
+      this.http.put(url,data)
+        .subscribe(res => resolve(res));
+    });
+  }
+
+  postService(url: string, param: any): Promise<any> {
+    //var body = JSON.stringify(param);
+    
+    var options = { headers: new HttpHeaders({ 'Content-Type': 'application/json' }) };
+    return this.http
+        .post(url, param, options)
+        .toPromise()
+        .then(this.extractData)
+        .catch(this.handleError);
+    }  
+
+    private extractData(res: Response) {
+        return res;
+    }
+
+    private handleError(error: any): Promise<any> {
+        console.error('An error occurred', error);
+        return Promise.reject(error.message || error);
+    }
 }
 
-}
+

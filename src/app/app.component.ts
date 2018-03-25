@@ -4,9 +4,10 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { HomePage } from '../pages/home/home';
-import { CardDetailsPage } from '../pages/card-details/card-details';
 import { ListPage } from '../pages/list/list';
+import { CardDetailsPage } from '../pages/card-details/card-details';
 import { LoginPage } from '../pages/login/login';
+import { ProfilePage } from '../pages/profile/profile';
 
 @Component({
   templateUrl: 'app.html'
@@ -25,8 +26,9 @@ export class MyApp {
     this.pages = [
       { title: 'Home', component: HomePage },
       { title: 'CardDetails', component: CardDetailsPage },
+      { title: 'Login', component: LoginPage },
       { title: 'List', component: ListPage },
-      { title: 'Login', component: LoginPage }
+      { title: 'Profile', component: ProfilePage },
     ];
 
   }

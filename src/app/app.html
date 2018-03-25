@@ -1,52 +1,52 @@
 <ion-menu [content]="content">
-    <ion-header no-shadow no-border>
-  
-    <ion-navbar>
-      <ion-title text-color="my-custom-color"><span>Categories</span></ion-title>
-    </ion-navbar>
-  
-  </ion-header>
-  <ion-content>
-    <!-- <ion-list>
-      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-        {{p.title}}
-      </button>
-    </ion-list> -->
-  
-  
-  <ion-grid class="category-menu">
+  <ion-header no-shadow no-border>
+
+  <ion-navbar>
+    <ion-title>iwish<span style="color:#8BC34A">u.in/categories</span></ion-title>
+  </ion-navbar>
+
+</ion-header>
+<ion-content>
+  <!-- <ion-list>
+    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+      {{p.title}}
+    </button>
+  </ion-list> -->
 
 
-      <ion-list>
-          <ion-item (click)="openPage('POLITICS')" class="sidebar-customize">
-              <img src="https://iwishu.in/ecard/images/iwish-app-icons/in-love.svg">
-              <h1>ecards</h1>
-          </ion-item>
-          <ion-item (click)="openPage('POLITICS')" class="sidebar-customize">
-              <img src="https://iwishu.in/ecard/images/iwish-app-icons/balloons.svg">
-              <h1>ewishes</h1>
-          </ion-item>
-          <ion-item (click)="openPage('POLITICS')" class="sidebar-customize">
-              <img src="https://iwishu.in/ecard/images/iwish-app-icons/victory.svg">
-              <h1>Motivational</h1>
-          </ion-item>
-          <ion-item (click)="openPage('POLITICS')" class="sidebar-customize">
-              <img src="https://iwishu.in/ecard/images/iwish-app-icons/clown.svg">
-              <h1>Funny</h1>
-          </ion-item>
-          <ion-item (click)="openPage('POLITICS')" class="sidebar-customize">
-              <img src="https://iwishu.in/ecard/images/iwish-app-icons/middle-finger.svg">
-              <h1>Attitude</h1>
-          </ion-item>
-          <ion-item (click)="openPage('POLITICS')" class="sidebar-customize">
-              <img src="https://iwishu.in/ecard/images/iwish-app-icons/moustache.svg">
-              <h1>Tanglish</h1>
-          </ion-item>
-        </ion-list>
-  </ion-grid>
-  </ion-content>
-  
-  </ion-menu>
-  
-  <!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
-  <ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>
+<ion-grid class="category-menu">
+
+
+    <ion-list>
+        <ion-item (click)="openPage('thought-of-the-day')" class="sidebar-customize">
+            <img src="https://iwishu.in/ecard/images/iwish-app-icons/in-love.svg">
+            <h1>ecards</h1>
+        </ion-item>
+        <ion-item (click)="openPage('thought-of-the-day')" class="sidebar-customize">
+            <img src="https://iwishu.in/ecard/images/iwish-app-icons/balloons.svg">
+            <h1>ewishes</h1>
+        </ion-item>
+        <ion-item (click)="openPage('thought-of-the-day')" class="sidebar-customize">
+            <img src="https://iwishu.in/ecard/images/iwish-app-icons/victory.svg">
+            <h1>Motivational</h1>
+        </ion-item>
+        <ion-item (click)="openPage('thought-of-the-day')" class="sidebar-customize">
+            <img src="https://iwishu.in/ecard/images/iwish-app-icons/clown.svg">
+            <h1>Funny</h1>
+        </ion-item>
+        <ion-item (click)="openPage('thought-of-the-day')" class="sidebar-customize">
+            <img src="https://iwishu.in/ecard/images/iwish-app-icons/middle-finger.svg">
+            <h1>Attitude</h1>
+        </ion-item>
+        <ion-item (click)="openPage('thought-of-the-day')" class="sidebar-customize">
+            <img src="https://iwishu.in/ecard/images/iwish-app-icons/moustache.svg">
+            <h1>Tanglish</h1>
+        </ion-item>
+      </ion-list>
+</ion-grid>
+</ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #content swipeBackEnabled="false"></ion-nav>

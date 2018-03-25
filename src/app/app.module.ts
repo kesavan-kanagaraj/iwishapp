@@ -2,17 +2,22 @@ import { BrowserModule } from '@angular/platform-browser';
 import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
-
 import { Facebook } from '@ionic-native/facebook';
+
+
+
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
-import { CardDetailsPage } from '../pages/card-details/card-details';
 import { ListPage } from '../pages/list/list';
+import { CardDetailsPage } from '../pages/card-details/card-details';
 import { LoginPage } from '../pages/login/login';
+import { ProfilePage } from '../pages/profile/profile';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { YaziApiProvider } from '../providers/providers';
+import { IonicStorageModule, Storage } from '@ionic/storage';
+
 
 @NgModule({
   declarations: [
@@ -20,12 +25,14 @@ import { YaziApiProvider } from '../providers/providers';
     HomePage,
     CardDetailsPage,
     ListPage,
-    LoginPage
+    LoginPage,
+    ProfilePage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     IonicModule.forRoot(MyApp),
+    IonicStorageModule.forRoot()
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -33,15 +40,16 @@ import { YaziApiProvider } from '../providers/providers';
     HomePage,
     CardDetailsPage,
     ListPage,
-    LoginPage
+    LoginPage,
+    ProfilePage
   ],
   providers: [
     StatusBar,
-    Facebook,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpClientModule,
-    YaziApiProvider
+    YaziApiProvider,
+    Facebook
   ]
 })
 export class AppModule {}

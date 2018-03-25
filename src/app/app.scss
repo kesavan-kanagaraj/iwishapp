@@ -34,21 +34,32 @@ ion-item.sidebar-customize h1 {
     font-size: 13px;
     color:#ccc ;
 }
-.card-ios{
-    width: 100% !important;
+.toolbar-background-md,.toolbar-background-ios,.toolbar-background-wp {
+    border-color: #b2b2b2;
+    background: #ffffff;
 }
-.card-wp{
-    width: 100% !important;
+ion-app.md [padding] .scroll-content,ion-app.ios [padding] .scroll-content,ion-app.wp [padding] .scroll-content{
+	background: #ffffff;
+	padding:0px;
 }
-ion-app.ios [padding] .scroll-content{
-    padding: 0px;
+.card-ios,.card-wp,.card-md{
+	width:100%;
+	box-shadow:none;
+	border-bottom:1px solid #f4f4f4
 }
-ion-app.md [padding] .scroll-content{
-    padding: 0px;
+.card-content-md,.card-content-ios,.card-content-wp {
+    padding: 5px 16px;
+    font-size: 1.4rem;
+    /* line-height: 1.5; */
 }
-ion-app.wp [padding] .scroll-content{
-    padding: 0px;
+.card-md p,.card-ios p,.card-wp p {
+    margin: 0px 0 0 2px;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 23px;
+    color: #636363;
 }
-page-home .card-md-0{
-    margin-top:0px;
+.bar-button-default-md, .bar-button-clear-md-default, .bar-button-md-default {
+    color: #0093ff;
+    background-color: transparent;
 }

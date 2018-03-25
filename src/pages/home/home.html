@@ -5,7 +5,7 @@
     </button>
     <ion-title>iwish<span style="color:#8BC34A">u.in</span></ion-title>
     <ion-buttons end>
-        <button ion-button icon-only color="royal">
+        <button ion-button icon-only color="royal" (click)="gotToProfile()">
             <ion-icon><img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/user.svg"></ion-icon>
         </button>
       </ion-buttons>
@@ -14,29 +14,30 @@
 
 <ion-content padding>
  <!-- <h1 class="">iwish<span style="color:#8BC34A">u.in/ecards</span></h1>-->
-  <ion-card class="card-md-0" *ngFor="let item of eCards">
-    <img src={{item.imagePath}}>
-    <ion-row>
-        <ion-col (click)="checkAuthentication()" class="col-2">
-        <button ion-button icon-left clear small>
-          <ion-icon><img class="hearts" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg"></ion-icon>
-          <div class="heartstext">{{item.likes}} Likes</div>
-        </button>
-      </ion-col>
-    <ion-col class="col-2 fright">
-        <button ion-button icon-right clear small>
-          <ion-icon><img class="share" src="https://iwishu.in/ecard/images/iwish-app-icons/share.svg"></ion-icon>
-        </button> 
-      </ion-col>
-      <ion-col class="col-2 fright">
-          <button ion-button icon-right clear small>
-              <ion-icon><img class="download" src="https://iwishu.in/ecard/images/iwish-app-icons/download.svg"></ion-icon>
-            </button>
-      </ion-col>
+  <ion-card  class="card-md-0" *ngFor="let item of eCards; let i = index">
+    <img src={{item.imagePath}} (click)="goToCardDetails(item)">
+	<ion-row>
+        <!-- Float the icon left -->
+		<button ion-button icon-only clear class="btntext">
+		  <ion-icon><img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg"></ion-icon>
+		  {{item.likes}} Likes
+		</button>
+
+		<!-- Float the icon right -->
+		<button ion-button icon-only clear class="btntext">
+		  <ion-icon><img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/share.svg"></ion-icon>
+		  Share
+		</button>
+
+		<!-- Only icon (no text) -->
+		<button ion-button icon-only clear class="btntext" end>
+		  <ion-icon><img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/download.svg"></ion-icon>
+		  Download
+		</button>
     </ion-row>
-    <ion-card-content>
+    <ion-card-content (click)="goToCardDetails(item)">
       <p>{{item.title}}</p>
-      <p class="timestamp">WISHED AT : {{item.updatedTime}}</p>
+      <p class="timestamp">Posted at : {{item.updatedTime}}</p>
     </ion-card-content>
   </ion-card>
 </ion-content>

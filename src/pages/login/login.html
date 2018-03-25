@@ -1,91 +1,66 @@
 <ion-header>
-    <ion-navbar>
-        <button ion-button menuToggle>
-            <ion-icon><img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/menu-button.svg"></ion-icon>
-          </button>
-      <ion-title>iwish<span style="color:#8BC34A">u.in</span></ion-title>
-    </ion-navbar>
-  </ion-header>
-  
-  
-  
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon>
+        <img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/menu-button.svg">
+      </ion-icon>
+    </button>
+    <ion-title>iwish
+      <span style="color:#8BC34A">u.in</span>
+    </ion-title>
+  </ion-navbar>
+</ion-header>
 
-  <ion-content padding class="sbg">
-    <div class="midcen">
-        <p style="text-align:center" class="loginpageLogo">iwish<span style="color:#8BC34A">u.in</span></p>
-        <p style="text-align:center" class="tagline">WISHES & QUOTES</p>
-      <div *ngIf="isLoggedIn; else facebookLogin">
-        <h2>Hi, {{users.name}} ({{users.email}})</h2>
-        <p>
-          Gender: {{users.gender}}
-        </p>
-        <p>
-          <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
-        </p>
-        <p>
-          <button ion-button icon-left (click)="logout()" class="pad-15">
-            <ion-icon name="logo-facebook"></ion-icon>
-            Logout
-          </button>
-        </p>
-      </div>
-      <ng-template #facebookLogin>
-        <button ion-button icon-left (click)="login()" class="pad-15 fbtcolor">
-          <ion-icon name="logo-facebook"></ion-icon>
-          Connect with Facebook
+<ion-content padding class="sbg">
+  <div class="midcen">
+    <p style="text-align:center" class="loginpageLogo">iwish<span style="color:#8BC34A">u.in</span>
+    </p>
+    <p style="text-align:center" class="tagline">WISHES & QUOTES</p>
+      <button ion-button icon-left (click)="login()" class="pad-15 fbtcolor">
+        <ion-icon name="logo-facebook"></ion-icon>
+        Connect with Facebook
+      </button>
+  </div>
+</ion-content>
+
+
+
+
+
+<!-- <ion-header>
+  <ion-navbar>
+      <button ion-button menuToggle>
+          <ion-icon><img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/menu-button.svg"></ion-icon>
         </button>
-      </ng-template>
-    </div>
-
-    <div class="profile">
-        <ion-list>
-            <ion-item>
-              <ion-avatar item-start>
-                <img src="https://iwishu.in/ecard/images/iwish-app-icons/man.svg">
-              </ion-avatar>
-              <h2>Kesavan kanagaraj</h2>
-              <p>email@domain.com</p>
-            </ion-item>
-          </ion-list>
-          <ion-row>
-              <ion-col class="col-6">
-          <button ion-button block outline icon-left>
-              <ion-icon><img class="hearts" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg"></ion-icon>
-            Likes
-          </button>
-        </ion-col>
-        <ion-col class="col-6">
-          <button ion-button block outline icon-left>
-              <ion-icon><img class="share" src="https://iwishu.in/ecard/images/iwish-app-icons/share.svg"></ion-icon>
-            Share
-          </button>
-        </ion-col>
-        </ion-row>
-        <ion-row>
-          <ion-col class="col-6" >
-              <img class="img-radius" src="https://iwishu.in/ecard/images/ican-iq.jpg">
-          </ion-col>
-          <ion-col class="col-6" >
-              <img class="img-radius" src="https://iwishu.in/ecard/images/farmers-protest.jpg">
-          </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col class="col-6" >
-                <img class="img-radius" src="https://iwishu.in/ecard/images/world-water-day.jpg">
-            </ion-col>
-            <ion-col class="col-6" >
-                <img class="img-radius" src="https://iwishu.in/ecard/images/thank-farmer.jpg">
-            </ion-col>
-          </ion-row>
-          <ion-row>
-              <ion-col class="col-6" >
-                  <img class="img-radius" src="https://iwishu.in/ecard/images/amaithi-shincan.jpg">
-              </ion-col>
-              <ion-col class="col-6" >
-                  <img class="img-radius" src="https://iwishu.in/ecard/images/wife.jpg">
-              </ion-col>
-            </ion-row>
-    </div>
+    <ion-title>log<span style="color:#8BC34A">u.in</span></ion-title>
+  </ion-navbar>
+</ion-header>
 
 
-  </ion-content>
+
+
+<ion-content padding>
+    <p style="text-align:center"><img style="width:50px" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg"></p>
+    <p style="line-height: 23px;font-size:14px">Start Loving the wishes and spread the love,<br>log<span style="color:#8BC34A">u.in</span>With Facebook to get started</p>
+  <div *ngIf="userDetails?.isloggedIn; else facebookLogin">
+    <h2>Hi, {{users.name}} ({{users.email}})</h2>
+    <p>
+      Gender: {{users.gender}}
+    </p>
+    <p>
+      <img src="{{users.picture.data.url}}" width="100" alt="{{users.name}}" />
+    </p>
+    <p>
+      <button ion-button icon-left (click)="logout()">
+        <ion-icon name="logo-facebook"></ion-icon>
+        Logout
+      </button>
+    </p>
+  </div>
+  <ng-template #facebookLogin>
+    <button ion-button block icon-left (click)="login()">
+      <ion-icon name="logo-facebook"></ion-icon>
+      Login with Facebook
+    </button>
+  </ng-template>
+</ion-content> -->
