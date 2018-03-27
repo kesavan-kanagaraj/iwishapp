@@ -3,6 +3,7 @@ import { ErrorHandler, NgModule } from '@angular/core';
 import { IonicApp, IonicErrorHandler, IonicModule } from 'ionic-angular';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { Facebook } from '@ionic-native/facebook';
+import { SocialSharing } from '@ionic-native/social-sharing';
 
 
 
@@ -49,7 +50,8 @@ import { IonicStorageModule, Storage } from '@ionic/storage';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     HttpClientModule,
     YaziApiProvider,
-    Facebook
+    Facebook,
+    SocialSharing
   ]
 })
 export class AppModule {}

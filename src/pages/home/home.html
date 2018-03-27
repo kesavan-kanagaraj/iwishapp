@@ -1,43 +1,54 @@
 <ion-header>
   <ion-navbar>
     <button ion-button menuToggle>
-      <ion-icon><img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/menu-button.svg"></ion-icon>
+      <ion-icon>
+        <img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/menu-button.svg">
+      </ion-icon>
     </button>
-    <ion-title>iwish<span style="color:#8BC34A">u.in</span></ion-title>
+    <ion-title>iwish
+      <span style="color:#8BC34A">u.in</span>
+    </ion-title>
     <ion-buttons end>
-        <button ion-button icon-only color="royal" (click)="gotToProfile()">
-            <ion-icon><img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/user.svg"></ion-icon>
-        </button>
-      </ion-buttons>
+      <button ion-button icon-only color="royal" (click)="gotToProfile()">
+        <ion-icon *ngIf="userDetails==null">
+          <img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/user.svg">
+        </ion-icon>
+        <ion-icon *ngIf="userDetails!=null">
+          <img class="menuicon" src="{{userDetails.profileImgUrl}}">
+        </ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
- <!-- <h1 class="">iwish<span style="color:#8BC34A">u.in/ecards</span></h1>-->
-  <ion-card  class="card-md-0" *ngFor="let item of eCards; let i = index">
+  <!-- <h1 class="">iwish<span style="color:#8BC34A">u.in/ecards</span></h1>-->
+  <ion-card class="card-md-0" *ngFor="let item of eCards; let i = index">
     <img src={{item.imagePath}} (click)="goToCardDetails(item)">
-	<ion-row>
-        <!-- Float the icon left -->
-		<button ion-button icon-only clear class="btntext">
-		  <ion-icon><img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg"></ion-icon>
-		  {{item.likes}} Likes
-		</button>
+    <ion-row>
+      <!-- Float the icon left -->
+      <button ion-button icon-only clear class="btntext"(click)="checkAuthentication(i)">
+        <ion-icon>
+          <img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg">
+        </ion-icon>
+        {{item.likes}} Likes
+      </button>
 
-		<!-- Float the icon right -->
-		<button ion-button icon-only clear class="btntext">
-		  <ion-icon><img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/share.svg"></ion-icon>
-		  Share
-		</button>
-
-		<!-- Only icon (no text) -->
-		<button ion-button icon-only clear class="btntext" end>
-		  <ion-icon><img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/download.svg"></ion-icon>
-		  Download
-		</button>
-    </ion-row>
+      <!-- Float the icon right -->
+      <button ion-button icon-only clear class="btntext" (click)="regularShare(item)">
+        <ion-icon>
+          <img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/share.svg">
+        </ion-icon>
+        Share
+      </button>
+      
+   </ion-row>
     <ion-card-content (click)="goToCardDetails(item)">
       <p>{{item.title}}</p>
       <p class="timestamp">Posted at : {{item.updatedTime}}</p>
     </ion-card-content>
   </ion-card>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

@@ -5,10 +5,17 @@
         <img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/left-arrow.svg">
       </ion-icon>
     </button>
-    <ion-title>iwish<span style="color:#8BC34A">u.in</span></ion-title>
+    <ion-title>iwish
+      <span style="color:#8BC34A">u.in</span>
+    </ion-title>
     <ion-buttons end>
       <button ion-button icon-only color="royal" (click)="gotToProfile()">
-          <ion-icon><img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/user.svg"></ion-icon>
+        <ion-icon *ngIf="userDetails==null">
+          <img class="menuicon" src="https://iwishu.in/ecard/images/iwish-app-icons/user.svg">
+        </ion-icon>
+        <ion-icon *ngIf="userDetails!=null">
+          <img class="menuicon" src="{{userDetails.profileImgUrl}}">
+        </ion-icon>
       </button>
     </ion-buttons>
   </ion-navbar>
@@ -19,29 +26,27 @@
     <ion-card class="card-md-0">
       <img src={{eCard.imagePath}}>
       <ion-row>
-        
-         <!-- Float the icon left -->
-		<button ion-button icon-only clear class="btntext">
-		  <ion-icon><img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg"></ion-icon>
-		  Likes
-		</button>
 
-		<!-- Float the icon right -->
-		<button ion-button icon-only clear class="btntext">
-		  <ion-icon><img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/share.svg"></ion-icon>
-		  Share
-		</button>
+        <!-- Float the icon left -->
+        <button ion-button icon-only clear class="btntext" (click)="checkAuthentication(i)">
+          <ion-icon>
+            <img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/heart.svg">
+          </ion-icon>
+          {{eCard.likes}} Likes
+        </button>
 
-		<!-- Only icon (no text) -->
-		<button ion-button icon-only clear class="btntext" end>
-		  <ion-icon><img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/download.svg"></ion-icon>
-		  Download
-		</button>
-        
+        <!-- Float the icon right -->
+        <button ion-button icon-only clear class="btntext">
+          <ion-icon>
+            <img class="metaIcon" src="https://iwishu.in/ecard/images/iwish-app-icons/share.svg">
+          </ion-icon>
+          Share
+        </button>
+
       </ion-row>
       <ion-card-content>
         <p>{{eCard.description}}</p>
-        <p class="timestamp">Posted at : {{eCard.updatedTime}}</p> 
+        <p class="timestamp">Posted at : {{eCard.updatedTime}}</p>
       </ion-card-content>
     </ion-card>
   </div>

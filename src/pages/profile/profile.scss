@@ -20,4 +20,52 @@ page-profile {
     ion-list.list {
         margin-bottom: 0px;
     }
+	img.metaIcon {
+		width: 18px;
+	}
+	.btntext{
+		color:#333;
+		font-size:12px;
+		text-transform:uppercase;
+	}
+	.bgprofile{
+		background:#ffffff;
+		height:200px;
+		text-align: center;
+	}
+	.floatright h2 {
+		color: #32db64;
+		margin-top: 10px !important;
+		font-size: 14px;
+		font-weight: 400;
+		margin-bottom:5px !important;
+	}
+	.floatright p {
+		margin-top: 0px;
+		margin-bottom: 5px;
+		font-size: 13px;
+	}
+	.pimg-radius{
+        border-radius: 50%;
+		width: 100px;
+		border: 1px solid #fff;
+		box-shadow: 0px 0px 5px #dcdbdb;
+		box-shadow: 0px 0px 5px #dcdbdb;
+		margin-top: 20px;
+		margin-left: 15px;
+    }
+	.likedlist{
+		margin-top:10px;
+	}
+	.likestotal{
+		margin-left:15px;
+	}
+	.likestotal span{
+		align:middle;
+	}
+	.likesnumber{
+		font-size: 25px;
+		font-weight: 600;
+		color: #656060;
+	}
 }

@@ -5,6 +5,7 @@ import { IEcards,IUserDetails,IUserPostInfo } from '../../interfaces/interfaces'
 import { YaziApiProvider } from '../../providers/providers';
 import { Facebook } from '@ionic-native/facebook';
 import { HomePage } from '../home/home';
+import { CardDetailsPage } from '../card-details/card-details';
 
 /**
  * Generated class for the ProfilePage page.
@@ -22,6 +23,7 @@ export class ProfilePage {
 
   private userDetails : IUserDetails;
   private eCards : IEcards[];
+  private totalLikes : number = 0;
   private data  : IUserDetails ={
     email : "sadcd@gmail.com",
     name : "kumaran",
@@ -45,6 +47,7 @@ export class ProfilePage {
   ngOnInit() : void {
     console.log('on init ..');
     this.getUserDetails();
+    //this.fetchFavoritiesEcards(); //-->delete it
  }
 
   getUserDetails(){
@@ -73,9 +76,17 @@ export class ProfilePage {
         
         var jsonData = JSON.stringify(data);
         this.eCards =  JSON.parse(jsonData);
+        this.totalLikes = this.eCards.length;
         loader.dismiss();
       })
       .catch(data => console.log(data));
+    });
+  }
+
+  goToCardDetails(item:IEcards){
+    this.navCtrl.push(CardDetailsPage, {
+      id: item.id,
+      socialId: this.userDetails.socialId
     });
   }
 

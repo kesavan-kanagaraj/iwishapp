@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Http, Headers, RequestOptions } from '@angular/http';
 import { UriHelpers } from '../../helpers/helpers';
 import 'rxjs/add/operator/map';
+import { HttpResponse } from '@angular/common/http/src/response';
 
 /*
   Generated class for the YaziApiProvider provider.
@@ -27,6 +28,23 @@ export class YaziApiProvider {
       this.http.get(`${UriHelpers.baseUrl + requestUrl}`)
         .subscribe(res => {
           resolve(res);
+        });
+    });
+  }
+
+  getEcardsWithPagination(categoryName: string, socialId: string, paginationUrl: string) {
+    var requestUrl = "";
+    if((categoryName == 'all' || categoryName == '' || categoryName == undefined) && paginationUrl==""){
+     requestUrl = `${UriHelpers.baseUrl + UriHelpers.eCardsPaginationUrlGenral}`
+    }
+    else{
+      requestUrl = paginationUrl == "" ? `${UriHelpers.baseUrl + UriHelpers.eCardsPaginationUrl.replace('category-name',categoryName)}` : paginationUrl;
+    }
+    requestUrl = socialId == "" ? requestUrl : requestUrl+"&socialId="+socialId;
+    return new Promise(resolve => {
+      this.http.get(`${requestUrl}`,{ observe: 'response' })
+        .subscribe(res => {
+          resolve(<any>res);
         });
     });
   }

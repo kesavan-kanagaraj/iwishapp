@@ -1,50 +1,62 @@
 <ion-menu [content]="content">
-  <ion-header no-shadow no-border>
-
-  <ion-navbar>
-    <ion-title>iwish<span style="color:#8BC34A">u.in/categories</span></ion-title>
-  </ion-navbar>
-
-</ion-header>
-<ion-content>
-  <!-- <ion-list>
-    <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
-      {{p.title}}
-    </button>
-  </ion-list> -->
-
-
-<ion-grid class="category-menu">
+    <ion-header no-shadow no-border>
+        <ion-navbar>
+            <ion-title>iwish
+                <span style="color:#8BC34A">u.in/categories</span>
+            </ion-title>
+        </ion-navbar>
+    </ion-header>
+    <ion-content>
+        <!-- <ion-list>
+      <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
+        {{p.title}}
+      </button>
+    </ion-list> -->
 
 
-    <ion-list>
-        <ion-item (click)="openPage('thought-of-the-day')" class="sidebar-customize">
-            <img src="https://iwishu.in/ecard/images/iwish-app-icons/in-love.svg">
-            <h1>ecards</h1>
-        </ion-item>
-        <ion-item (click)="openPage('thought-of-the-day')" class="sidebar-customize">
-            <img src="https://iwishu.in/ecard/images/iwish-app-icons/balloons.svg">
-            <h1>ewishes</h1>
-        </ion-item>
-        <ion-item (click)="openPage('thought-of-the-day')" class="sidebar-customize">
-            <img src="https://iwishu.in/ecard/images/iwish-app-icons/victory.svg">
-            <h1>Motivational</h1>
-        </ion-item>
-        <ion-item (click)="openPage('thought-of-the-day')" class="sidebar-customize">
-            <img src="https://iwishu.in/ecard/images/iwish-app-icons/clown.svg">
-            <h1>Funny</h1>
-        </ion-item>
-        <ion-item (click)="openPage('thought-of-the-day')" class="sidebar-customize">
-            <img src="https://iwishu.in/ecard/images/iwish-app-icons/middle-finger.svg">
-            <h1>Attitude</h1>
-        </ion-item>
-        <ion-item (click)="openPage('thought-of-the-day')" class="sidebar-customize">
-            <img src="https://iwishu.in/ecard/images/iwish-app-icons/moustache.svg">
-            <h1>Tanglish</h1>
-        </ion-item>
-      </ion-list>
-</ion-grid>
-</ion-content>
+        <ion-grid class="category-menu">
+
+
+            <ion-list>
+                <ion-item (click)="openPage('all')" class="sidebar-customize">
+                    <img src="https://iwishu.in/ecard/images/iwish-app-icons/all.svg">
+                    <h1>All</h1>
+                </ion-item>
+                <ion-item (click)="openPage('e-wishes')" class="sidebar-customize">
+                    <img src="https://iwishu.in/ecard/images/iwish-app-icons/ewishes.svg">
+                    <h1>e-wishes</h1>
+                </ion-item>
+                <ion-item (click)="openPage('motivational-quotes')" class="sidebar-customize">
+                    <img src="https://iwishu.in/ecard/images/iwish-app-icons/motivational.svg">
+                    <h1>Motivational Quotes</h1>
+                </ion-item>
+                <ion-item (click)="openPage('attitude-quotes')" class="sidebar-customize">
+                    <img src="https://iwishu.in/ecard/images/iwish-app-icons/attitude.svg">
+                    <h1>Attitude Quotes</h1>
+                </ion-item>
+                <ion-item (click)="openPage('tamil-quotes')" class="sidebar-customize">
+                    <img src="https://iwishu.in/ecard/images/iwish-app-icons/tamil.svg">
+                    <h1>tamil and Tanglish Quotes</h1>
+                </ion-item>
+                <ion-item (click)="openPage('funny-quotes')" class="sidebar-customize">
+                    <img src="https://iwishu.in/ecard/images/iwish-app-icons/funny.svg">
+                    <h1>Funny Quotes</h1>
+                </ion-item>
+                <ion-item (click)="openPage('entrepreneur-quotes')" class="sidebar-customize">
+                    <img src="https://iwishu.in/ecard/images/iwish-app-icons/entrepreneurial.svg">
+                    <h1>Entrepreneurial Quotes</h1>
+                </ion-item>
+                <ion-item (click)="openPage('leaders-and-celebrity-quotes')" class="sidebar-customize">
+                    <img src="https://iwishu.in/ecard/images/iwish-app-icons/leaders.svg">
+                    <h1>Leaders and Celebrity Quotes</h1>
+                </ion-item>
+                <ion-item (click)="openPage('social-issues')" class="sidebar-customize">
+                    <img src="https://iwishu.in/ecard/images/iwish-app-icons/social.svg">
+                    <h1>Social Issues</h1>
+                </ion-item>
+            </ion-list>
+        </ion-grid>
+    </ion-content>
 
 </ion-menu>
 
